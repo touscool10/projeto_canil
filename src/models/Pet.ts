@@ -1,4 +1,15 @@
-[
+type PetType = 'dog' | 'cat' | 'fish' | '';
+type SexType = 'Masculino' | 'Feminino';
+
+type Pet = {
+    type: PetType,
+    image: string,
+    name: string,
+    color: string,
+    sex: SexType
+};
+
+const pets = [
     {
         type: 'dog',
         image: 'pastor-alemao.jpg',
@@ -118,4 +129,16 @@
         color: 'Preto',
         sex: 'Masculino'
     },
-]
+];
+
+export function getAll(): Pet[] {
+    return pets as Pet[];
+}
+
+export function getPetsByType(type: 'dog' | 'cat' | 'fish'): Pet[] {
+    return pets.filter((p) => p.type == type) as Pet[];
+}
+
+export function getPetsByName(name: string): Pet[] {
+    return pets.filter((p) => p.name.toLowerCase().indexOf(name.toLowerCase()) > -1) as Pet[];
+}
