@@ -9,12 +9,14 @@
             <div class="item--genre">Gênero: {{sex}}</div>
         </div>
     {{/list}}
-
-    {{^list}}
-        <div class="container no-list">
-            <h2>Nenhum resultado!</h2>
-        </div>
-    {{/list}}
 </div>
+
+
+{{^list}}
+    <div class="container no-list">
+        <h2>Nenhum resultado!</h2>
+    </div>
+{{/list}}
+
 
 {{>partials/footer}}
